@@ -3,7 +3,7 @@
  public class HashMap{
      public static void main (String[] args) {
       Scanner scan=new Scanner(System.in);
-      HashMap<String, Integer> map = new HashMap<>();
+      LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
       int n = scan.nextInt();
       scan.nextLine();
       for(int i=0;i<n;i++){
@@ -16,15 +16,11 @@
           itemCost = (int)itemDiscount;
           map.put(itemName,itemCost);
       }
-      System.out.println(map);
       int min = Collections.min(map.values());
-      List<String> itemsToBuy= new ArrayList<String>();
-      
       map.forEach((k, v) -> {
           if(v == min) {
         	  System.out.println(k);
           }
       });
-      //System.out.println(itemsToBuy);
      }
  }
